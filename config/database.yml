@@ -82,4 +82,5 @@ production:
   <<: *default
   database: rails-with-react_production
   username: rails-with-react
-  password: <%= ENV['RAILS-WITH-REACT_DATABASE_PASSWORD'] %>
+  password: deploy
+  host: localhost
