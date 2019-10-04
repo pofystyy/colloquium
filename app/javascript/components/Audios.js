@@ -12,7 +12,7 @@ const Audios = () => {
         formData.append("audio", inputEl.current.files[0])
          axios.post('audios/recognize', formData)
           .then(res => {
-            setAudios([{ transcription: res.data.expression }])
+            setAudios([ ...audios, { transcription: res.data.expression }])
           }).finally(() => {
             inputEl.current.value = null
           })
