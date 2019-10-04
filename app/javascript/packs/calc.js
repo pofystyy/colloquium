@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from '../components/App'
+import Calculator from '../components/Calculator'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <App />,
+    <Calculator />,
     document.body.appendChild(document.createElement('div')),
   )
 })

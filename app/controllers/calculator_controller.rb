@@ -1,4 +1,7 @@
 class CalculatorController < ApplicationController
+	def index
+	end
+	
   def add
   	raise 'ErrorHandler::InvalidBodyParams' unless BodyKeysValidator.call(params_)
 
