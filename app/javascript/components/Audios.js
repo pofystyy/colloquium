@@ -10,7 +10,11 @@ const Audios = () => {
       if (inputEl.current.files.length) {
         let formData = new FormData()
         formData.append("audio", inputEl.current.files[0])
-         axios.post('audios/recognize', formData)
+         axios.post('audios/recognize', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
           .then(res => {
             setAudios([ ...audios, { transcription: res.data.expression }])
           }).finally(() => {
@@ -18,18 +22,25 @@ const Audios = () => {
           })
         }
     }
-
-    return (         
-      <div>
-        <input ref={inputEl} type="file" />
-        <button type="submit" onClick={sendAudio}>Recognize</button>
-      
-        { audios.map((e, key) => { 
-          return (                
-            <p>Transcription: {e.transcription}</p>
-          )
-        })}
-      </div>
+       
+    return (
+      <section>
+        <div className={"container"}>
+          <form>
+            <div>
+              <input ref={inputEl} id="#file" type="file" />
+              <button type="submit" onClick={sendAudio}>Recognize</button>
+            </div>
+            { audios.map((e, key) => {
+              return (
+                <div key={key}>
+                  <p>Transcription: {e.transcription}</p>
+                </div>
+              )
+            })}
+          </form>
+        </div>
+      </section>
     )
 }
 
