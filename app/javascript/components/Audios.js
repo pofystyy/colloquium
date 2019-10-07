@@ -10,7 +10,7 @@ const Audios = () => {
       if (inputEl.current.files.length) {
         let formData = new FormData()
         formData.append("audio", inputEl.current.files[0])
-         axios.post('audios', formData, {
+         axios.post('audios/recognize', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

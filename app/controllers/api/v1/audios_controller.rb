@@ -1,10 +1,7 @@
 module Api
   module V1
     class AudiosController < ApplicationController
-      def index		
-      end
-
-      def create
+      def recognize
         audio = params[:audio].path
         transcript = Speech.recognize(audio)
 

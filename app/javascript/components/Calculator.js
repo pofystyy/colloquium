@@ -16,7 +16,7 @@ export default class Calculator extends React.Component {
     const expression = this.state.expression
     const currentLog = this.state.log
 
-    const response = await axios.post('calculator', {
+    const response = await axios.post('calculator/add', {
       text: expression,
     }).catch((e) => ({ data: 'Err' }))
 

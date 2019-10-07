@@ -5,8 +5,8 @@ class Home extends React.Component {
   render() {
     return (
     <div>
-      <Link to='/api/v1/calculator'>Calculator</Link>
-      <Link to='/api/v1/audios'>Audios</Link>
+      <p><Link to='/api/v1/calculator'>Calculator</Link></p>
+      <p><Link to='/api/v1/audios'>Audios</Link></p>
     </div>
     )
   }

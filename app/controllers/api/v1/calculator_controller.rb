@@ -1,11 +1,7 @@
 module Api
   module V1
     class CalculatorController < ApplicationController
-      def index
-       create
-      end
-      
-      def create
+      def add
         raise 'ErrorHandler::InvalidBodyParams' unless BodyKeysValidator.call(params_)
 
         data = params_[:text]
