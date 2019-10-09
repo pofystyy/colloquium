@@ -30,13 +30,29 @@ export default class Calculator extends React.Component {
 
   render() {
     return (
-      <div>
-        <input type='text' onChange={this.handleChange} value={this.state.expression} />
-        <Button clickHandler={this.onSubmit} text="Сalculate"></Button>
-        {
-          this.state.log.map((item, i) => <p key={i}>{ item }</p>)
-        }
+      <div className="container">
+        <div className="card">
+          <h5 className="card-header">Calculator</h5>
+          <div className="card-body">
+            <h5 className="card-title">Only 'add'</h5>
+              <input type='text' className="form-control col-sm-5 custom-input" onChange={this.handleChange} value={this.state.expression} />
+              <Button clickHandler={this.onSubmit} text="Сalculate"></Button>
+          </div>
+          { this.state.log.map((item, i) => {
+                return (
+                  <div className="card" key={i}>
+                    <div className="card-body">
+                      <p>{ item }</p>
+                    </div>
+                  </div>
+                )
+              })}
+          
+        </div>
       </div>
+
+
+ 
     )
   }
 }
