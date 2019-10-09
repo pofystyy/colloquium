@@ -3,6 +3,7 @@
 # module Calculator
   class BodyKeysValidator < ApplicationService
     def initialize(data)
+      # byebug
       @text_key = data.keys.first
     end
 
