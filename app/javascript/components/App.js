@@ -13,8 +13,8 @@ export default class App extends React.Component {
           <Header/>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/api/v1/calculator" component={Calculator} />
-            <Route path="/api/v1/audios" component={Audios} />
+            <Route path="/calculator" component={Calculator} />
+            <Route path="/audio" component={Audios} />
           </Switch>
         </BrowserRouter>
       </div>

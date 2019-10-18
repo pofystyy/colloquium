@@ -10,11 +10,11 @@ const Audios = () => {
       if (inputEl.current.files.length) {
         let formData = new FormData()
         formData.append("audio", inputEl.current.files[0])
-         axios.post('audios/recognize', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
+         axios.post('audio/recognize', formData, 
+         //        headers: {
+         //          'Content-Type': 'multipart/form-data'
+         //        }
+            )
           .then(res => {
             setAudios([ ...audios, { transcription: res.data.expression }])
           }).finally(() => {

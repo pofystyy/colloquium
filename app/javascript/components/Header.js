@@ -13,8 +13,8 @@ export default class Header extends React.Component {
                Projects
              </a>
              <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-               <Link to='/api/v1/calculator' className='dropdown-item'>Calculator</Link>
-               <Link to='/api/v1/audios' className='dropdown-item'>Audios</Link>
+               <Link to='/calculator' className='dropdown-item'>Calculator</Link>
+               <Link to='/audio' className='dropdown-item'>Audios</Link>
              </div>
           </li>
         </ul>

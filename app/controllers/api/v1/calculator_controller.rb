@@ -2,10 +2,9 @@ module Api
   module V1
     class CalculatorController < ApplicationController
       def add
-        raise 'ErrorHandler::InvalidBodyParams' unless BodyKeysValidator.call(params_)
-
-        data = params_[:text]
-        render json: CalculationActions::Add.call(data)
+        data = params[:text]
+        result = CalculationActions::Add.call(data)
+        render json: { success: true, result: result }, status: :ok
       end
     end
   end

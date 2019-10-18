@@ -9,8 +9,8 @@ class Home extends React.Component {
     <div className={"container"}>
       <h1 className="text-center">Colloquium</h1>
       	<div className="flex-container">
-      	  <Link to='/api/v1/calculator' className='flex-child img'><img src={calc} /></Link>
-      	  <Link to='/api/v1/audios' className='flex-child img'><img src={speech} /></Link>         
+      	  <Link to='/calculator' className='flex-child img'><img src={calc} /></Link>
+      	  <Link to='/audio' className='flex-child img'><img src={speech} /></Link>         
         </div>
     </div>
     )
