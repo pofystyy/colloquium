@@ -1,0 +1,111 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/audios/recognize": {
+      "post": {
+        "summary": "Call audio recognize",
+        "tags": [
+          "Recognize"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "recognize",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "audio": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "audio"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          },
+          "401": {
+            "description": "unauthorized"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/api/v1/calculator/add": {
+      "post": {
+        "summary": "Call calculator add",
+        "tags": [
+          "Add"
+        ],
+        "security": [
+          {
+            "basic": [
+
+            ]
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "add",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "done"
+          },
+          "401": {
+            "description": "unauthorized"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "basic": {
+      "type": "basic"
+    },
+    "apiKey": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "query"
+    }
+  }
+}
