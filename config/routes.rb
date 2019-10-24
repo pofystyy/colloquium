@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   root 'pages#index'
-  # match '*path', to: 'pages#index', via: :all
-  resources :calculator, only: [:index]
+  
+               
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      post 'calculator/add'
+      post 'audios/recognize'
+   end
+  end
   post 'calculator/add'
+  post 'audio/recognize'
+  
+  get '*path', to: 'pages#index'
 
-  resources :audios, only: [:index]
-  post 'audios/recognize'
+  
 end

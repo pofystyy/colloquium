@@ -1,6 +1,15 @@
 class Speech
-	def self.recognize(audio)
-		audio_file = File.binread audio
+	def self.api_recognize(audio_file)
+		all_recognize(audio_file)
+	end
+
+	def self.recognize(audio_file)
+		all_recognize(File.binread(audio_file))
+	end
+
+	private
+
+	def self.all_recognize(audio_file)
 		audio  = { content: audio_file }
 
 		response = speech.recognize config, audio
@@ -11,8 +20,6 @@ class Speech
 			return alternative.transcript
 		end
 	end
-
-	private
 
 	def self.speech
 		Google::Cloud::Speech.new

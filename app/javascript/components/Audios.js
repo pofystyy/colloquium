@@ -10,11 +10,11 @@ const Audios = () => {
       if (inputEl.current.files.length) {
         let formData = new FormData()
         formData.append("audio", inputEl.current.files[0])
-         axios.post('audios/recognize', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
+         axios.post('audio/recognize', formData, 
+         //        headers: {
+         //          'Content-Type': 'multipart/form-data'
+         //        }
+            )
           .then(res => {
             setAudios([ ...audios, { transcription: res.data.expression }])
           }).finally(() => {
@@ -24,23 +24,25 @@ const Audios = () => {
     }
        
     return (
-      <section>
-        <div className={"container"}>
-          <form>
-            <div>
-              <input ref={inputEl} id="#file" type="file" />
-              <button type="submit" onClick={sendAudio}>Recognize</button>
-            </div>
-            { audios.map((e, key) => {
-              return (
-                <div key={key}>
-                  <p>Transcription: {e.transcription}</p>
-                </div>
-              )
-            })}
-          </form>
+      <div className="container">
+        <div className="card">
+          <h5 className="card-header">Audio Recognizer</h5>
+          <div className="card-body">
+            <h5 className="card-title">Only 'audio' files</h5>
+              <input ref={inputEl} className="form-control-file custom-input" id="exampleFormControlFile1" type="file" />
+              <button type="submit" className="btn btn-dark" onClick={sendAudio}>Recognize</button>
+          </div>
+          { audios.map((e, key) => {
+                return (
+                  <div className="card" key={key}>
+                    <div className="card-body">
+                      <p>Transcription: {e.transcription}</p>
+                    </div>
+                  </div>
+                )
+              })}
         </div>
-      </section>
+      </div>
     )
 }
 
