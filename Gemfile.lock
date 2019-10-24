@@ -298,6 +298,9 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rspec-rails (~> 3.8)
   rswag
+  rswag-api
+  rswag-specs
+  rswag-ui
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

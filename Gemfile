@@ -39,6 +39,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'google-cloud-speech', '~> 0.37.0'
 gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
+
+group :test do
+  gem 'rswag-specs'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
