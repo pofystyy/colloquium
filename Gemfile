@@ -41,6 +41,7 @@ gem 'google-cloud-speech', '~> 0.37.0'
 gem 'rswag'
 gem 'rswag-api'
 gem 'rswag-ui'
+gem 'rspec-core'
 
 group :test do
   gem 'rswag-specs'
