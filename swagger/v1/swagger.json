@@ -28,7 +28,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "audio": {
+                "file": {
                   "type": "string"
                 }
               },
@@ -41,9 +41,6 @@
         "responses": {
           "200": {
             "description": "ok"
-          },
-          "401": {
-            "description": "unauthorized"
           },
           "422": {
             "description": "invalid request"
@@ -86,10 +83,7 @@
         ],
         "responses": {
           "200": {
-            "description": "done"
-          },
-          "401": {
-            "description": "unauthorized"
+            "description": "ok"
           },
           "422": {
             "description": "invalid request"

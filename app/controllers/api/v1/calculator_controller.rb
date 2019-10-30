@@ -6,7 +6,7 @@ module Api
           result = CalculationActions::Add.call(params[:text])
           render json: { success: true, result: result }, status: :ok
         elsif
-          render json: { message: 'error', status: 422 }
+          head 422
         end
       end
     end
