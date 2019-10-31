@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: rails-with-react_production
-  username: rails-with-react
-  password: deploy
+  database: ENV['DATABASE_NAME']
+  username: ENV['DATABASE_USERNAME']
+  password: ENV['DATABASE_PASSWORD']
   host: localhost
