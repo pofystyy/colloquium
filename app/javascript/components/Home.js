@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import calc from '/Users/tromas/Downloads/calc1.jpg'
-import speech from '/Users/tromas/Downloads/speech.jpg'
+import calc from 'images/calc.jpg'
+import speech from 'images/speech.jpg'
 
 class Home extends React.Component {
   render() {
