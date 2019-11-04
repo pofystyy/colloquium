@@ -10,7 +10,7 @@ set :migration_role,          :app
 set :assets_roles,            [:web, :app]
 set :rails_env,               :production
 set :rvm_ruby_version,        'ruby-2.3.6'
-set :linked_files,            %w{config/database.yml config/master.key}
+set :linked_files,            %w{config/master.key}
 
 # Puma settings
 set :puma_threads,            [0, 8]
