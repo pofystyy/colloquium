@@ -6,7 +6,7 @@ set :branch,                  :master
 set :deploy_to,               '/home/deploy/app'
 set :pty,                     true
 set :use_sudo,                true
-set :migration_role,          :app
+# set :migration_role,          :app
 set :assets_roles,            [:web, :app]
 set :rails_env,               :production
 set :rvm_ruby_version,        'ruby-2.3.6'
