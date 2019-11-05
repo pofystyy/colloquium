@@ -10,7 +10,7 @@ set :use_sudo,                true
 set :assets_roles,            [:web, :app]
 set :rails_env,               :production
 set :rvm_ruby_version,        'ruby-2.3.6'
-set :linked_files,            %w{config/master.key}
+set :linked_files,            %w{config/master.key config/.env}
 
 # Puma settings
 set :puma_threads,            [0, 8]
