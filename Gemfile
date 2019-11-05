@@ -42,6 +42,7 @@ gem 'rswag'
 gem 'rswag-api'
 gem 'rswag-ui'
 gem 'rspec-core'
+gem "sentry-raven"
 
 group :test do
   gem 'rswag-specs'
