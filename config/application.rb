@@ -29,5 +29,9 @@ module RailsWithReact
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    Raven.configure do |config|
+      config.dsn = ENV['SENTRY_RAVEN_DSN'] 
+    end
+    config.assets.precompile += %w(index.js)
   end
 end

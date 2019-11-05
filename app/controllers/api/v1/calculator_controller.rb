@@ -1,6 +1,6 @@
 module Api
   module V1
-    class CalculatorController < Api::V1::ApplicationController
+    class CalculatorController < Api::V1::PagesController
       def add
         if params[:text]
           result = CalculationActions::Add.call(params[:text])
